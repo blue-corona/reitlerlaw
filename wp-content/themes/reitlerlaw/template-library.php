@@ -33,17 +33,21 @@ get_header();
         <h1><?php the_title() ; ?></h1>
       </div>
 
-      <div class="library-category-container">
-        <a href="/reitler-library/newsletters/">
-          <div class="library-category-block">
-            <h2>Reitler Newsletters</h2>
-          </div>
-        </a>
-        <a href="/reitler-library/press-releases/">
-          <div class="library-category-block">
-            <h2>Press Releases</h2>
-          </div>
-        </a>
+      <div class="library-category-container row">
+        <div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">
+          <a href="/reitler-library/newsletters/">
+            <div class="library-category-block">
+              <h2>Reitler Newsletters</h2>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">
+          <a href="/reitler-library/press-releases/">
+            <div class="library-category-block">
+              <h2>Press Releases</h2>
+            </div>
+          </a>
+        </div>
       </div>
 
     </div>

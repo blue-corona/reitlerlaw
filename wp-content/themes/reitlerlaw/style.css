@@ -2315,3 +2315,9 @@ button.refresh {
 .ubermenu #menu-item-811 .ubermenu-target-text {
   font-size: 12px;
 }
+
+@media (max-width: 767px) {
+  .library-category-block {
+    width: auto;
+  }
+}
