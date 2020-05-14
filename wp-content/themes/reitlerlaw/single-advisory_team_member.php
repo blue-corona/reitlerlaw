@@ -41,13 +41,13 @@ get_header(); ?>
                      <div class="bio-top">
                         <div class="row">
                            <div class="col-xl-3 col-md-5">
-                              <?php $bio_img = get_field('member_image') ; ?>
+                              <?php $bio_img = get_field('advisory_headshot') ; ?>
                               <div class="bio-image" style="background:url(<?php echo esc_url($bio_img['url']); ?>);"></div>
                            </div>
                            <div class="col-xl-9 col-md-7">
                               <div class="bio-header">
                                  <div class="bio-header-left">
-                                    <h1><?php the_title() ; ?><span><?php the_field('add_designation') ; ?></span></h1>
+                                    <h1><?php the_title() ; ?><span><?php the_field('advisory_designation') ; ?></span></h1>
                                  </div>
                                  <div class="bio-header-right">
                                     <div class="bio-socials">
@@ -76,15 +76,15 @@ get_header(); ?>
                                     <?php if (get_field('location') ) { ?>
                                        <li><?php the_field('location')?></li>
                                     <?php } ?>
-                                    <?php if (get_field('email') ) { ?>
-                                       <li><span>E:</span> <a href="mailto:<?php the_field('email')?>"><?php the_field('email')?></a></li>
+                                    <?php if (get_field('advisory_email') ) { ?>
+                                       <li><span>E:</span> <a href="mailto:<?php the_field('advisory_email')?>"><?php the_field('advisory_email')?></a></li>
                                     <?php } ?>
-                                    <?php if (get_field('phone_number') ) { ?>
-                                       <?php $phonnumr = get_field('phone_number') ; ?>
+                                    <?php if (get_field('advisory_phone_number') ) { ?>
+                                       <?php $phonnumr = get_field('advisory_phone_number') ; ?>
                                        <li><span>P:</span> <span class="d-lg-block d-none"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $phonnumr); ?></span><a class="d-lg-none d-block responsive-mob" href="tel:<?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1.$2.$3", $phonnumr); ?>"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $phonnumr); ?></a></li>
                                     <?php } ?>
-                                    <?php if (get_field('fax_number') ) { ?>
-                                       <?php $faxphonnum = get_field('fax_number') ; ?>
+                                    <?php if (get_field('advisory_fax_number') ) { ?>
+                                       <?php $faxphonnum = get_field('advisory_fax_number') ; ?>
                                        <li><span>F:</span> <span class="fax"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $faxphonnum); ?></span></li>
                                     <?php } ?>
                                  </ul>

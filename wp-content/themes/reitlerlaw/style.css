@@ -1514,6 +1514,7 @@ section.subpage-content.page-transection-content {
 
 .bio-image {
   height: 100%;
+  min-height: 325px;
   width: 100%;
   background-size: cover !important;
   background-position: center top !important;
