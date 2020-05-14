@@ -790,7 +790,7 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
   line-height: 72px;
   margin: 0 0 20px 0;
   text-shadow: 10px 10px 100px #fff, 10px 10px 100px #fff;
-  max-width: 750px;
+  /* max-width: 750px; */
 }
 
 .service-section {
