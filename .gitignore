@@ -1,4 +1,4 @@
-# Version 2.1
+# Version 3.0
 
 *~
 .DS_Store
@@ -32,6 +32,16 @@ wp-content/mu-plugins/stop-long-comments.php
 wp-content/mu-plugins/force-strong-passwords*
 wp-content/mu-plugins/wpengine-common*
 wp-content/mysql.sql
+wp-content/themes/bc-penguin/Search-Replace-DB-master/
+wp-content/updraft/
+.wpe-pull-ignore
+.wpe-push-ignore
+.tmb/
+.wpe-devkit/
+.wpengine-conf/
+robots.txt
+sitemap.xml
+sitemap.xml.gz
 
 # wp core (as of 4.9.5)
 /db-config.php
