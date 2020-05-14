@@ -16,7 +16,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 <div class="sidebar-sec">
   <div class="sidebar-col">
-     <div class="primery-title">related partners</div>
+     <div class="primery-title">related attorneys</div>
      <div class="slideVertical sidebar-slider">
       <?php $args = array('post_type'=> 'team', 'posts_per_page'=> -1  ) ; ?>
       <?php $loop = new WP_Query($args) ; ?>

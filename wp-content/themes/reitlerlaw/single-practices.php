@@ -46,7 +46,7 @@ get_header(); ?>
 			<?php if(get_field('select_team_block')){ ?>
                <div class="sidebar-sec">
   <div class="sidebar-col">
-     <div class="primery-title">related partners</div>
+     <div class="primery-title">related attorneys</div>
      <div class="slideVertical sidebar-slider">
 	 <?php $posts = get_field('select_team_block'); ?>
 	  <?php $nc = 1 ; ?>
