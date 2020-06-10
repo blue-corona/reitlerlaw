@@ -42,7 +42,7 @@ get_header();
 		<div class="row">
 			 <?php foreach( $post_objects as $post){ // variable must be called $post (IMPORTANT) ?>
 			<?php setup_postdata($post);
-				$mem_img = get_field('member_image');
+				$mem_img = get_field('advisory_headshot');
 			?>
 			<div class="col-12 col-xl-6" style="margin-bottom:15px">
 				<div class="person container-fluid">
@@ -50,8 +50,8 @@ get_header();
 				<div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
 				<div class="col-7 col-sm-8">
 				<p class="profile-name"><?php the_title(); ?></p>
-				<p class="profile-title"><?php echo get_field('add_designation'); ?></p>
-				<p class="profile-contact_info"><?php echo get_field('phone_number'); ?> <br><?php echo get_field('email'); ?></p>
+				<p class="profile-title"><?php echo get_field('advisory_headshot'); ?></p>
+				<p class="profile-contact_info"><?php echo get_field('advisory_phone_number'); ?> <br><?php echo get_field('advisory_email'); ?></p>
 
 				</div>
 				</div>
