@@ -42,9 +42,5 @@ get_header(); ?>
 
  </section>
  </main>
-<?php if(get_field('add_service', 10 )): 
-               $i=1;
-               ?> 
-<?php get_template_part('service-cta'); ?>
- <?php endif; ?>
+
 <?php get_footer();

@@ -48,7 +48,7 @@ get_header(); ?>
   <div class="sidebar-col">
      <div class="primery-title">related attorneys</div>
      <div class="slideVertical sidebar-slider">
-	 <?php $posts = get_field('select_team_block_for_page'); ?>
+	 <?php $posts = get_field('select_team_block'); ?>
 	  <?php $nc = 1 ; ?>
                          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
                           <?php setup_postdata($post); ?>
@@ -86,6 +86,6 @@ get_header(); ?>
       </div>
    </section>
 </main>
-<?php get_template_part('service-cta'); ?>
+
 <?php
 get_footer();

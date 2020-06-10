@@ -44,8 +44,8 @@ get_header();
           <?php if (have_rows('add_business_partners') ) : ?>
 		   <div class="row text-center">
            <?php while (have_rows('add_business_partners') ) : the_row() ; ?>  
-            <div class="col-xl-4  col-sm-6 col-12"> 
-              <a href="<?php the_sub_field('add_partner_link') ; ?>" class="transection-col">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-1-5 mb-4"> 
+              <a href="<?php the_sub_field('add_partner_link') ; ?>" class="transection-col experience-col">
                 <div class="transection-col-inner">
                   <div class="transection-image">
                     <?php $sec_img = get_sub_field('add_partner_image') ; ?>
@@ -66,7 +66,7 @@ get_header();
         <?php if (have_rows('add_transection') ) : ?>
           <?php $cnt = 1 ; ?>
           <?php while (have_rows('add_transection') ) : the_row() ; ?>
-            <?php  if( $cnt <= 4  ) {  ?>
+            <?php  if( $cnt <= 8  ) {  ?>
               <div class="transection-box">
                 <?php the_sub_field('add_box_content') ; ?>
               </div>  
@@ -81,7 +81,7 @@ get_header();
        <div class="transection-hidden-content hidden-content" data-lr="view">
         <?php $cnt = 1 ; ?>
         <?php while (have_rows('add_transection') ) : the_row() ; ?>
-         <?php  if( $cnt > 4  ) {  ?>
+         <?php  if( $cnt > 8  ) {  ?>
            <div class="transection-box">
             <?php the_sub_field('add_box_content') ; ?>
           </div>
@@ -94,7 +94,7 @@ get_header();
   <?php $count = count(get_field('add_transection')); ?>
 
   <div class="repres-extra-sec">
-    <?php if($count > 5){  ?>
+    <?php if($count > 9){  ?>
     <div class="transection-extra-col transection-bt section-1 as-sw-hd"><i class="far fa-minus-circle"></i><i class="far fa-plus-circle"></i><span>View More</span></div>  
   <?php } ?>
  </div>

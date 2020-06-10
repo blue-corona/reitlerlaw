@@ -5,7 +5,17 @@
 
 get_header();
 ?>
-
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable .transection-box").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 <main class="site-content">
  <section class="subpage-banner">
@@ -52,12 +62,14 @@ get_header();
     
     </div>
 
-    <div class="transection-bottom">
-      <div class="transection-bottom-text">
+    
+    <div class="transection-bottom" id="myTable">
+      
+      <div class="transection-bottom-text" >
         <?php if (have_rows('add_transection') ) : ?>
           <?php $cnt = 1 ; ?>
           <?php while (have_rows('add_transection') ) : the_row() ; ?>
-            <?php  if( $cnt <= 4  ) {  ?>
+            <?php  if( $cnt <= 8  ) {  ?>
               <div class="transection-box">
                 <?php the_sub_field('add_box_content') ; ?>
               </div>  
@@ -72,7 +84,7 @@ get_header();
        <div class="transection-hidden-content hidden-content" data-lr="view">
         <?php $cnt = 1 ; ?>
         <?php while (have_rows('add_transection') ) : the_row() ; ?>
-         <?php  if( $cnt > 4  ) {  ?>
+         <?php  if( $cnt > 8  ) {  ?>
            <div class="transection-box">
             <?php the_sub_field('add_box_content') ; ?>
           </div>
@@ -85,14 +97,17 @@ get_header();
   <?php $count = count(get_field('add_transection')); ?>
 
   <div class="repres-extra-sec">
-    <?php if($count > 5){  ?>
+    <?php if($count > 9){  ?>
     <div class="transection-extra-col transection-bt section-1 as-sw-hd"><i class="far fa-minus-circle"></i><i class="far fa-plus-circle"></i><span>View More</span></div>  
   <?php } ?>
     <div class="transection-extra-col transection-form"><span><i class="far fa-search"></i> Search</span> 
-     <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+      <form class="transection-search">
+        <input class="search-text" id="myInput" type="text" placeholder="Search..">
+      </form>
+     <!-- <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
        <input type="text" name="s" id="search" class="search-text">
        <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon">
-     </form>
+     </form> -->
 
    </div>
  </div>

@@ -59,6 +59,6 @@ get_header(); ?>
     </div>
   </section>
 </main>
-<?php get_template_part('service-cta'); ?>
+
 <?php
 get_footer();
