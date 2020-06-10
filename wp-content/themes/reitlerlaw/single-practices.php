@@ -43,12 +43,12 @@ get_header(); ?>
                </div>
             </div>
             <div class="col-xl-3">
-			<?php if(get_field('select_team_block')){ ?>
+			<?php if(get_field('select_team_block_for_page')){ ?>
                <div class="sidebar-sec">
   <div class="sidebar-col">
-     <div class="primery-title">related attorneys</div>
+     <div class="primery-title">Related Partners</div>
      <div class="slideVertical sidebar-slider">
-	 <?php $posts = get_field('select_team_block'); ?>
+	 <?php $posts = get_field('select_team_block_for_page'); ?>
 	  <?php $nc = 1 ; ?>
                          <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
                           <?php setup_postdata($post); ?>
