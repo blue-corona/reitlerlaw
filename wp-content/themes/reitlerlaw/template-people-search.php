@@ -32,7 +32,7 @@ get_header();
 
 
       <!--<div class="row page-img" id="people_img"></div>-->
-      <div id="people" class="row">
+      <div id="people" class="row justify-content-sm-center">
         <div class="col-lg-6 col-12 mb-5">
           <div id="search-area" class="has-active-search">
             <div class="row" id="alpha_search">
@@ -190,14 +190,11 @@ get_header();
         </div><!-- /.col-sm-6 col-12 -->
 
 
+          <?php if($_POST){ ?>
 
 
         <div class="col-lg-6 col-12">
 
-          <?php
-
-
-?>
           <?php
 if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GET['a']))
 {
@@ -319,6 +316,10 @@ if(!$result_found)
 ?>
 
         </div>
+		
+		<?php }?>
+		
+		
       </div>
 
     </div>

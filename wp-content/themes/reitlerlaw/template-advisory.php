@@ -29,59 +29,40 @@ get_header();
    </section>
    <section class="subpage-content page-transection-content">
     <div class="container">
-      <div class="partener-logo-col">
+      <div class="partener-logo-col1">
         <h1><?php the_title() ; ?></h1>
         <?php while (have_posts() ) : the_post() ; ?>
          <?php  the_content() ; ?>
        <?php endwhile ; ?>
-       <div class="row text-center">
-        <?php if (have_rows('add_advisory') ) : ?>
-         <?php while (have_rows('add_advisory') ) : the_row() ; ?>  
-          <div class="col-md-6 col-xl-4">
-            <?php if(get_sub_field('advisory_link')){?>
-              <a href="<?php the_sub_field('advisory_link') ; ?>" class="transection-col">
-              <?php } else{ ?>
-                <div data-toggle="modal" data-target="#advisoryModal1" class="transection-col">
-                <?php } ?>
-                <div class="transection-col-inner">
-                 <?php $sec_img = get_sub_field('advisory_image') ; ?>
-                 <div data-imgsrc="<?php echo $sec_img['url'] ; ?>" class="transection-image" style="background-image: url('<?php echo $sec_img['url'] ; ?>')">
-                 </div>
-                 <div class="transection-text"><?php the_sub_field('advisory_title') ; ?></div>
-                 <div class="p-none"><?php the_sub_field('advisory_content') ; ?></div>
-               </div>
+       
+   <?php
+	$post_objects = get_field('add_team_members');
+	if($post_objects){ ?>
+   <div class="section-details-text col-xs-12">
+		<div class="row">
+			 <?php foreach( $post_objects as $post){ // variable must be called $post (IMPORTANT) ?>
+			<?php setup_postdata($post);
+				$mem_img = get_field('member_image');
+			?>
+			<div class="col-12 col-xl-6" style="margin-bottom:15px">
+				<div class="person container-fluid">
+				<div class="row align-items-center" style="cursor: pointer;">
+				<div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
+				<div class="col-7 col-sm-8">
+				<p class="profile-name"><?php the_title(); ?></p>
+				<p class="profile-title"><?php echo get_field('add_designation'); ?></p>
+				<p class="profile-contact_info"><?php echo get_field('phone_number'); ?> <br><?php echo get_field('email'); ?></p>
 
-
-            <?php if(get_sub_field('advisory_link')){?>
-              </a>
-              <?php } else{ ?>
-                </div>
-                <?php } ?>
-
-             <div class="modal fade advisory-modal" id="advisoryModal1" role="dialog">
-              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">         
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                   <div class="transection-col-inner-ds">
-                     <h2></h2>
-                     <?php $sec_img = get_sub_field('advisory_image') ; ?>
-                     <img src="<?php echo $sec_img['url'] ; ?>" alt="<?php echo $sec_img['alt'] ; ?>" />
-                     <div class="transaction-content"><?php the_sub_field('advisory_content') ; ?></div>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-
-         </div>
-       <?php endwhile ; ?>
-     <?php endif ;?>
-   </div>
+				</div>
+				</div>
+				</div>
+			</div>
+			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			<?php } ?>
+		</div>
+	</div>
+   <?php } ?>
+   
  </div>
 </div>
 </section>
