@@ -44,8 +44,8 @@ get_header();
             'post_type'   => 'article',
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'orderby' => 'title',
-            'order' => 'ASC', 
+            'orderby' => 'date',
+            'order' => 'DESC', 
           );
 
           $articles = new WP_Query( $args );
