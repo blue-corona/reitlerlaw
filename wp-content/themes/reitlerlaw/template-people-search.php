@@ -271,8 +271,13 @@ else if(isset($_POST['member_pa_id']))
 {
 		$practice_id = strtolower($_POST['member_pa_id']);
 		if(get_field('select_team_block', $practice_id)){
-		$result_found = true; ?>
-          <?php $posts = get_field('select_team_block', $practice_id); ?>
+		$result_found = true; 
+		//Below Function filter/sort the teams member object data on the title basis
+		function compare_title_function($a, $b) {
+			return strcmp($a->post_title, $b->post_title);
+		}
+		?>
+          <?php $posts = get_field('select_team_block', $practice_id); usort($posts, 'compare_title_function');?>
           <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
           <?php setup_postdata($post); ?>
           <div class="col-12 col-md-11 col-lg-10 mb-4">
