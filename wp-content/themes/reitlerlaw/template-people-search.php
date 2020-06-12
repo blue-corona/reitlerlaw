@@ -33,7 +33,7 @@ get_header();
 
       <!--<div class="row page-img" id="people_img"></div>-->
       <div id="people" class="row justify-content-sm-center">
-        <div class="col-lg-6 col-12 mb-5">
+        <div class="col-lg-6 col-12 mb-5 search-column">
           <div id="search-area" class="has-active-search">
             <div class="row" id="alpha_search">
               <div class="col-12">
@@ -190,10 +190,9 @@ get_header();
         </div><!-- /.col-sm-6 col-12 -->
 
 
-          <?php if($_POST){ ?>
+        <?php if( $_POST || isset($_GET[a]) ) { ?>
 
-
-        <div class="col-lg-6 col-12">
+        <div class="col-lg-6 col-12 results-column">
 
           <?php
 if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GET['a']))
@@ -242,7 +241,7 @@ if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GE
                   <?php $partner_img = get_field('member_image') ; ?>
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>"> <img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php echo $partner_img['alt'] ; ?>"></a>
                 </div>
-                <div class="col-7 col-sm-8">
+                <div class="col-7 col-sm-8 alphabetical-order">
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>">
                     <div class="profile-name"><?php the_title() ; ?></div>
                     <div class="profile-title"><?php the_field('add_designation') ; ?></div>
@@ -271,8 +270,8 @@ else if(isset($_POST['member_pa_id']))
 {
 		$practice_id = strtolower($_POST['member_pa_id']);
 		if(get_field('select_team_block', $practice_id)){
-		$result_found = true; 
-		//Below Function filter/sort the teams member object data on the title basis
+		$result_found = true; ?>
+    <?php //Below Function filter/sort the teams member object data on the title basis
 		function compare_title_function($a, $b) {
 			return strcmp($a->post_title, $b->post_title);
 		}
@@ -319,12 +318,9 @@ if(!$result_found)
 	echo "<h4>No results found.</h4>";
 }
 ?>
-
+<?php }?>
         </div>
-		
-		<?php }?>
-		
-		
+        
       </div>
 
     </div>
@@ -352,5 +348,6 @@ jQuery(document).ready(function() {
     })
 
   });
+
 });
 </script>
