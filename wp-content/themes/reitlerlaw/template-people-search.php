@@ -273,7 +273,10 @@ else if(isset($_POST['member_pa_id']))
 		$result_found = true; ?>
     <?php //Below Function filter/sort the teams member object data on the title basis
 		function compare_title_function($a, $b) {
-			return strcmp($a->post_title, $b->post_title);
+			return strcasecmp( 
+					end(explode(" ",strtolower($a->post_title))), 
+					end(explode(" ",strtolower($b->post_title))) 
+				);
 		}
 		?>
           <?php $posts = get_field('select_team_block', $practice_id); usort($posts, 'compare_title_function');?>
