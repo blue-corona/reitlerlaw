@@ -36,32 +36,41 @@ get_header();
        <?php endwhile ; ?>
        
    <?php
-	$post_objects = get_field('add_team_members');
-	if($post_objects){ ?>
+   $args = array(
+		'post_type' => 'advisory_team_member',
+		'posts_per_page' => -1,
+		'order' => 'ASC
+		'
+	);
+	$query = new WP_Query( $args );
+	
+	if ( $query->have_posts() ) { ?>
    <div class="section-details-text col-xs-12">
 		<div class="row">
-			 <?php foreach( $post_objects as $post){ // variable must be called $post (IMPORTANT) ?>
-			<?php setup_postdata($post);
+			 <?php while ( $query->have_posts() ) { // variable must be called $post (IMPORTANT) ?>
+			<?php $query->the_post();
 				$mem_img = get_field('advisory_headshot');
 			?>
 			<div class="col-12 col-xl-6" style="margin-bottom:15px">
 				<div class="person container-fluid">
-				<div class="row align-items-center" style="cursor: pointer;">
+				<a href="<?php the_permalink();?>" class="row align-items-center" style="cursor: pointer;">
 				<div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
 				<div class="col-7 col-sm-8">
 				<p class="profile-name"><?php the_title(); ?></p>
-				<p class="profile-title"><?php echo get_field('advisory_headshot'); ?></p>
+				<p class="profile-title"><?php echo get_field('advisory_designation'); ?></p>
 				<p class="profile-contact_info"><?php echo get_field('advisory_phone_number'); ?> <br><?php echo get_field('advisory_email'); ?></p>
 
 				</div>
-				</div>
+				</a>
 				</div>
 			</div>
-			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			<?php // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			<?php } ?>
 		</div>
 	</div>
-   <?php } ?>
+   <?php }
+	wp_reset_postdata(); 
+   ?>
    
  </div>
 </div>
