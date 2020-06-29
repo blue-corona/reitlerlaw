@@ -101,13 +101,13 @@ $(document).ready(function(){
     <div class="transection-extra-col transection-bt section-1 as-sw-hd"><i class="far fa-minus-circle"></i><i class="far fa-plus-circle"></i><span>View More</span></div>  
   <?php } ?>
     <div class="transection-extra-col transection-form"><span><i class="far fa-search"></i> Search</span> 
-      <form class="transection-search">
+       <!--<form class="transection-search">
         <input class="search-text" id="myInput" type="text" placeholder="Search..">
-      </form>
-     <!-- <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-       <input type="text" name="s" id="search" class="search-text">
+      </form> -->
+     <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+        <input class="search-text" id="myInput" type="text" placeholder="Search.." name="s" >
        <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon">
-     </form> -->
+     </form>
 
    </div>
  </div>
