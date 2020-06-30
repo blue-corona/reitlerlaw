@@ -806,3 +806,34 @@ function bc_search_filter( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'bc_search_filter' );
+
+
+
+function reitler_lib_block_func( $atts ) {
+	$blocktype = $atts['type'];
+	$blockttitle = $atts['title'];
+	$blocklink = $atts['link'];
+	$blockID = (str_replace(' ', '-', strtolower($blockttitle)));
+		$data .= '<div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">';
+		if($blocktype == 'normal'){
+			$data .= '<a href="'.$blocklink.'">';
+		}elseif($blocktype == 'video' || $blocktype == 'image'){
+			$data .= '<a href="JavaScript:Void(0);" data-toggle="modal" data-target="#'.$blockID.'">';
+		}
+			$data .= '<div class="library-category-block">';
+			$data .= '<h2>'.$blockttitle.'</h2>';
+			$data .= '</div></a>';
+
+		if($blocktype == 'video' || $blocktype == 'image'){
+			$data .= '<div class="modal fade popup-modal" id="'.$blockID.'" tabindex="-1" role="dialog" aria-labelledby="popupModalCenterTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">';
+			if($blocktype == 'video'){
+				$data .= '<iframe style="width:100%;min-height:400px"  src="'.$blocklink.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+			}elseif($blocktype == 'image'){
+				$data .= '<img src="'.$blocklink.'"/>';
+			}
+			$data .=  '<div class="popup-bottom-content"></div></div></div></div></div>';
+		}
+		$data .= '</div>';
+	return  $data;
+}
+add_shortcode( 'reitler-lib-block', 'reitler_lib_block_func' );

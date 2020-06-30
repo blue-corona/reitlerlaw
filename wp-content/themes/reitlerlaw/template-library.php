@@ -4,6 +4,7 @@
  */
 
 get_header();
+the_post();
 ?>
 
 
@@ -34,22 +35,8 @@ get_header();
       </div>
 
       <div class="library-category-container row">
-        <div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">
-          <a href="/reitler-library/newsletters/">
-            <div class="library-category-block">
-              <h2>Reitler Newsletters</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">
-          <a href="/reitler-library/press-releases/">
-            <div class="library-category-block">
-              <h2>Press Releases</h2>
-            </div>
-          </a>
-        </div>
+        <?php the_content(); ?> 
       </div>
-
     </div>
 
     <div class="repres-extra-sec">
