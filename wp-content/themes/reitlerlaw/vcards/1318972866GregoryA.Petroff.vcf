@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Petroff;Gregory;A.
+FN:Gregory A. Petroff
+ORG:Reitler Kailas & Rosenblatt LLC
+TITLE:Partner
+NOTE;ENCODING=QUOTED-PRINTABLE:=0D=0A
+TEL;WORK;VOICE:(609) 514-1502
+TEL;WORK;FAX:(609) 514-1501
+ADR;WORK:;;5 Vaughn Drive;Princeton;NJ;08540;United States of America
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:5 Vaughn Drive=0D=0APrinceton, NJ 08540=0D=0AUnited States of America
+ADR;HOME:;;;;;;United States of America
+LABEL;HOME:United States of America
+URL;WORK:http://www.reitlerlaw.com
+EMAIL;PREF;INTERNET:gpetroff@reitlerlaw.com
+REV:20100702T163612Z
+END:VCARD

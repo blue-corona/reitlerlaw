@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+CLASS:PUBLIC
+PRODID:-//class_vcard from TroyWolf.com//NONSGML Version 1//EN
+REV:2019-05-16 15:44:40
+FN:Emily Santana
+N:Santana;Emily;Ann;;
+TITLE:Associate
+ORG:Budd Larner P.C.
+ADR;TYPE=work:;;150 John F. Kennedy Parkway;Short Hills;NJ;07078-2703;
+EMAIL;TYPE=internet,pref:Esantana@buddlarner.com
+TEL;TYPE=work,voice:973-315-4431
+TEL;TYPE=work,fax:973-379-7734
+URL;TYPE=work:https://www.buddlarner.com
+TZ:-0400
+END:VCARD

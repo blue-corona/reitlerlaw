@@ -1,0 +1,19 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Rosenblatt;Scott;H.
+FN:Scott H. Rosenblatt
+ORG:Reitler Kailas & Rosenblatt LLC
+TITLE:Partner
+NOTE;ENCODING=QUOTED-PRINTABLE:=0D=0A
+TEL;WORK;VOICE:(212) 209-3040
+TEL;WORK;FAX:(212) 371-5500
+ADR;WORK;ENCODING=QUOTED-PRINTABLE:;;885 Third Avenue=0D=0AFloor 20;New York;New York;10022-4611;United States =
+of America
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:885 Third Avenue=0D=0AFloor 20=0D=0ANew York, New York 10022-4611=0D=0AUnite=
+d States of America
+ADR;HOME:;;;;;;United States of America
+LABEL;HOME:United States of America
+URL;WORK:http://www.reitlerlaw.com
+EMAIL;PREF;INTERNET:srosenblatt@reitlerlaw.com
+REV:20100303T143050Z
+END:VCARD

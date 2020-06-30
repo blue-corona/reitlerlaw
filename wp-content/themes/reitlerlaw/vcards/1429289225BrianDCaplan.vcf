@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.10.3//EN
+N:Caplan;Brian;D.;;
+FN:Brian D. Caplan
+ORG:Reitler Kailas & Rosenblatt LLC;
+TITLE:Partner
+EMAIL;type=INTERNET;type=WORK;type=pref:bcaplan@reitlerlaw.com
+TEL;type=WORK;type=VOICE;type=pref:(212) 209-3059
+TEL;type=WORK;type=FAX:2123715500
+ADR;type=WORK;type=pref:;Floor 20;885 Third Avenue;New York;New York;10022-4611;United States of America
+URL;type=WORK;type=pref:http://www.reitlerlaw.com
+UID:af81de99-bcf2-43f4-b800-1d53039f3630
+X-ABUID:AF81DE99-BCF2-43F4-B800-1D53039F3630:ABPerson
+END:VCARD

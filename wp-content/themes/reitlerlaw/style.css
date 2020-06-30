@@ -792,7 +792,7 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
   font-size: 48px;
   color: #393d3f;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: none;
   line-height: 72px;
   margin: 0 0 20px 0;
   text-shadow: 10px 10px 100px #fff, 10px 10px 100px #fff;

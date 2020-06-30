@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.10.3//EN
+N:Baraff;Andrew;;;
+FN:Andrew Baraff
+ORG:Reitler Kailas & Rosenblatt LLC;
+TITLE:Partner
+EMAIL;type=INTERNET;type=WORK;type=pref:abaraff@reitlerlaw.com
+TEL;type=WORK;type=VOICE;type=pref:2123713094
+TEL;type=WORK;type=FAX:2123715500
+ADR;type=WORK;type=pref:;Floor 20;885 Third Avenue;New York;New York;10022-4611;United States of America
+URL;type=WORK;type=pref:http://www.reitlerlaw.com
+UID:50af27fc-3259-4aa0-aaa4-f63f9303b8c5
+X-ABUID:50AF27FC-3259-4AA0-AAA4-F63F9303B8C5:ABPerson
+END:VCARD

@@ -65,7 +65,7 @@ get_header(); ?>
                                              <li><a target="_blank" href="<?php the_field('add_file')?>"><i class="fas fa-file-pdf"></i></a></li>
                                           <?php } ?>
                                           <?php if (get_field('add_card') ) { ?>   
-                                             <li><a target="_blank" href="<?php the_field('add_card')?>"><i class="fas fa-id-card-alt"></i></a></li>
+                                             <li><a target="_blank" href="<?php echo get_template_directory_uri()."/vcards/".get_field('add_card'); ?>"><i class="fas fa-id-card-alt"></i></a></li>
                                           <?php } ?>
                                        </ul>
                                     </div>

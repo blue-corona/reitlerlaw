@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//Mac OS X 10.10.3//EN
+N:Van Benthysen;Brett;;;
+FN:Brett Van Benthysen
+ORG:Reitler Kailas & Rosenblatt LLC;
+TITLE:Associate
+EMAIL;type=INTERNET;type=WORK;type=pref:bvanbenthysen@reitlerlaw.com
+TEL;type=WORK;type=VOICE;type=pref:(212) 209-3045
+TEL;type=WORK;type=FAX:(212) 371-5500
+ADR;type=HOME;type=pref:;Floor 20;885 Third Avenue;New York;New York;10022-4611;United States of America
+URL;type=WORK;type=pref:http://www.reitlerlaw.com
+UID:747fe894-9a84-4afb-9636-4a15f24fb9dc
+X-ABUID:747FE894-9A84-4AFB-9636-4A15F24FB9DC:ABPerson
+END:VCARD
