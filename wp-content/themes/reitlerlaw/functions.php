@@ -827,7 +827,7 @@ function reitler_lib_block_func( $atts ) {
 		if($blocktype == 'video' || $blocktype == 'image'){
 			$data .= '<div class="modal fade popup-modal" id="'.$blockID.'" tabindex="-1" role="dialog" aria-labelledby="popupModalCenterTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">';
 			if($blocktype == 'video'){
-				$data .= '<iframe style="width:100%;min-height:400px"  src="'.$blocklink.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+				$data .= '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="'.$blocklink.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
 			}elseif($blocktype == 'image'){
 				$data .= '<img src="'.$blocklink.'"/>';
 			}
