@@ -241,7 +241,7 @@ if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GE
                   <?php $partner_img = get_field('member_image') ; ?>
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>"> <img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php echo $partner_img['alt'] ; ?>"></a>
                 </div>
-                <div class="col-7 col-sm-8 alphabetical-order">
+                <div class="col-7 col-sm-8 alphabetical-order py-2">
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>">
                     <div class="profile-name"><?php the_title() ; ?></div>
                     <div class="profile-title"><?php the_field('add_designation') ; ?></div>
