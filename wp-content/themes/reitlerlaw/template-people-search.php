@@ -236,7 +236,7 @@ if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GE
           <div class="col-12 col-md-11 col-lg-10 mb-4">
 
             <div class="person">
-              <div class="row">
+              <div class="row align-items-center">
                 <div class="col-5 col-sm-4">
                   <?php $partner_img = get_field('member_image') ; ?>
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>"> <img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php echo $partner_img['alt'] ; ?>"></a>
@@ -285,7 +285,7 @@ else if(isset($_POST['member_pa_id']))
           <div class="col-12 col-md-11 col-lg-10 mb-4">
 
             <div class="person">
-              <div class="row">
+              <div class="row align-items-center">
                 <div class="col-5 col-sm-4">
                   <?php $partner_img = get_field('member_image') ; ?>
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>"><img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php echo $partner_img['alt'] ; ?>"></a>
