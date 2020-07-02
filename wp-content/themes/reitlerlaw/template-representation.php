@@ -123,10 +123,11 @@ jQuery(document).ready(function(){
 		e.preventDefault(e);
 		var search_val = jQuery('.search-text').val();
 		if(search_val){
-		//alert(search_val);
+		console.log(search_val);
 			jQuery('.transection-box,.transection-bt').hide();
 			jQuery('.transection-box').each(function(){
 					var element_cont = jQuery(this).text();
+					console.log(element_cont);
 					if(element_cont.indexOf(search_val) != -1){
 						jQuery(this).show();
 					}
