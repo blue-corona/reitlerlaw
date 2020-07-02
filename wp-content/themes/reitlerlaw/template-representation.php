@@ -119,6 +119,7 @@ $(document).ready(function(){
 <script>
 jQuery(document).ready(function(){
 	jQuery("#representation-form").submit(function(e){
+		console.log(1111);
 		//alert('submit intercepted');
 		e.preventDefault(e);
 		var search_val = jQuery('.search-text').val();
