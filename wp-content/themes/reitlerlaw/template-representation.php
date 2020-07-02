@@ -119,10 +119,8 @@ $(document).ready(function(){
 <script>
 jQuery(document).ready(function(){
 	jQuery("#representation-form").submit(function(e){
-		console.log(1111);
-		//alert('submit intercepted');
-		
-		var search_val = jQuery('.search-text').val();
+		e.preventDefault(e);
+		var search_val = jQuery('#myInput').val();
 		if(search_val){
 		console.log(search_val);
 			jQuery('.transection-box,.transection-bt').hide();
@@ -135,7 +133,6 @@ jQuery(document).ready(function(){
 			});
 			jQuery('.transection-hidden-content').show();
 		}
-		e.preventDefault(e);
 	});
 	
 });
