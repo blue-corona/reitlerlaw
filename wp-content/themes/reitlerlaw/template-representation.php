@@ -96,7 +96,7 @@ $(document).ready(function(){
 
   <?php $count = count(get_field('add_transection')); ?>
 
-  <div class="repres-extra-sec">
+<div class="repres-extra-sec">
     <?php if($count > 9){  ?>
     <div class="transection-extra-col transection-bt section-1 as-sw-hd"><i class="far fa-minus-circle"></i><i class="far fa-plus-circle"></i><span>View More</span></div>  
   <?php } ?>
@@ -104,9 +104,9 @@ $(document).ready(function(){
        <!--<form class="transection-search">
         <input class="search-text" id="myInput" type="text" placeholder="Search..">
       </form> -->
-     <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-        <input class="search-text" id="myInput" type="text" placeholder="Search.." name="s" >
-       <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon">
+     <form id="representation-form" class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+        <input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
+       <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
      </form>
 
    </div>
@@ -116,5 +116,26 @@ $(document).ready(function(){
 </div>
 </section>
 </main>
+<script>
+jQuery(document).ready(function(){
+	jQuery("#representation-form").submit(function(e){
+		//alert('submit intercepted');
+		e.preventDefault(e);
+		var search_val = jQuery('.search-text').val();
+		if(search_val){
+		//alert(search_val);
+			jQuery('.transection-box,.transection-bt').hide();
+			jQuery('.transection-box').each(function(){
+					var element_cont = jQuery(this).text();
+					if(element_cont.indexOf(search_val) != -1){
+						jQuery(this).show();
+					}
+			});
+			jQuery('.transection-hidden-content').show();
+		}
+	});
+	
+});
+</script>
 <?php
 get_footer();
