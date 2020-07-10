@@ -120,14 +120,14 @@ $(document).ready(function(){
 jQuery(document).ready(function(){
 	jQuery("#representation-form").submit(function(e){
 		e.preventDefault(e);
-		var search_val = jQuery('#myInput').val();
+		var search_val = jQuery('#myInput').val().toLowerCase();
 		if(search_val){
 		console.log(search_val);
 			jQuery('.transection-box,.transection-bt').hide();
 			jQuery('.transection-box').each(function(){
 					var element_cont = jQuery(this).text();
 					console.log(element_cont);
-					if(element_cont.indexOf(search_val) != -1){
+					if(element_cont.toLowerCase().indexOf(search_val) != -1){
 						jQuery(this).show();
 					}
 			});
