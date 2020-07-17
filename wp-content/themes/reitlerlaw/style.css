@@ -2333,4 +2333,8 @@ button.refresh {
   .library-category-block {
     width: auto;
   }
+  html body .bio-image{background-size:238px !important; background-repeat: no-repeat !important; min-height: auto !important; height: 320px !important;}
+}
+@media (max-width: 1699px) and (min-width: 1200px){
+  html body .bio-image{background-size:100% !important; background-repeat: no-repeat !important; min-height: auto !important;}
 }
