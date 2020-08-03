@@ -77,7 +77,7 @@ get_header(); ?>
                                        <li><?php the_field('location')?></li>
                                     <?php } ?>
                                     <?php if (get_field('advisory_email') ) { ?>
-                                       <li><span>E:</span> <a href="mailto:<?php the_field('advisory_email')?>"><?php the_field('advisory_email')?></a></li>
+                                       <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <a href="mailto:<?php the_field('advisory_email')?>"><?php the_field('advisory_email')?></a></li>
                                     <?php } ?>
                                     <?php if (get_field('advisory_phone_number') ) { ?>
                                        <?php $phonnumr = get_field('advisory_phone_number') ; ?>

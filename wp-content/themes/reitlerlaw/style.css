@@ -742,6 +742,8 @@ header.site-header {
   left: 0;
   right: 0;
   bottom: 0;
+      opacity: 0;
+    visibility: hidden;
 }
 
 .banner-sub-text {
@@ -790,7 +792,7 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
 
 .banner-title {
   font-size: 48px;
-  color: #393d3f;
+  color: #ffffff;
   font-weight: bold;
   text-transform: none;
   line-height: 72px;
@@ -835,7 +837,7 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
 
 .col-md-3.service-cta.service-block-expanded .service-single-content {
   max-height: 100%;
-  min-height: 296px;
+  min-height: 235px;
 }
 
 .service-cta {
