@@ -40,7 +40,47 @@ get_header();
       </div>-->
       <div class="partener-logo-col">
         <h1><?php the_title() ; ?></h1>
-       
+			<?php 
+				$all_parents_tax = get_terms( array( 'taxonomy' => 'transactions_cat', 'parent' => 0 ) );
+				$term_ary = array();
+				foreach($all_parents_tax as $single_parent_tax){
+					$term_order = (get_field('transaction_category_order', $single_parent_tax))? get_field('transaction_category_order', $single_parent_tax) : 0 ;
+					$term_ary[$term_order]['name'] = $single_parent_tax->name;
+					$term_ary[$term_order]['slug'] = $single_parent_tax->slug;
+					$term_ary[$term_order]['id']   = $single_parent_tax->term_taxonomy_id;
+					$term_ary[$term_order]['page'] = get_field('transaction_page', $single_parent_tax);
+					$term_img = get_field('transaction_category_image', $single_parent_tax);
+					if($term_img){
+						$term_ary[$term_order]['image']['url'] =$term_img['url'];
+						$term_ary[$term_order]['image']['alt'] =$term_img['alt'];
+					}else{
+						$term_ary[$term_order]['image']['url'] = get_template_directory_uri().'/assets/images/experience_dummy.jpg';
+						$term_ary[$term_order]['image']['alt'] = 'Transaction Category Block';
+					}
+					
+				}
+				ksort($term_ary);
+				//print_r($term_ary);
+			?>
+		   <div class="row text-center">
+           <?php foreach($term_ary as $single_term_ary){ ?>  
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-1-5 mb-4"> 
+              <a href="<?php echo $single_term_ary['page']; ?>" class="transection-col experience-col">
+                <div class="transection-col-inner">
+                  <div class="transection-image">
+                    <img data-src="<?php echo $single_term_ary['image']['url']; ?>" alt="<?php echo $single_term_ary['image']['alt']; ?>" />
+                  </div>
+                  <div class="transection-text"><?php echo $single_term_ary['name']; ?></div>
+                </div>
+              </a>
+            </div>
+		   <?php } ?>
+		   </div>
+			
+			
+			
+			
+			
           <?php if (have_rows('add_business_partners') ) : ?>
 		   <div class="row text-center">
            <?php while (have_rows('add_business_partners') ) : the_row() ; ?>  
@@ -60,46 +100,6 @@ get_header();
         <?php endif ;?>
     
     </div>
-
-    <div class="transection-bottom">
-      <div class="transection-bottom-text">
-        <?php if (have_rows('add_transection') ) : ?>
-          <?php $cnt = 1 ; ?>
-          <?php while (have_rows('add_transection') ) : the_row() ; ?>
-            <?php  if( $cnt <= 8  ) {  ?>
-              <div class="transection-box">
-                <?php the_sub_field('add_box_content') ; ?>
-              </div>  
-            <?php } ?>
-            <?php $cnt++ ; ?>
-          <?php endwhile ; ?>
-        <?php endif ; ?>
-      </div>
-
-
-      <?php if (have_rows('add_transection') ) : ?>
-       <div class="transection-hidden-content hidden-content" data-lr="view">
-        <?php $cnt = 1 ; ?>
-        <?php while (have_rows('add_transection') ) : the_row() ; ?>
-         <?php  if( $cnt > 8  ) {  ?>
-           <div class="transection-box">
-            <?php the_sub_field('add_box_content') ; ?>
-          </div>
-        <?php } ?>
-        <?php $cnt++ ; ?>
-      <?php endwhile ; ?>
-    </div>
-  <?php endif ; ?>
-
-  <?php $count = count(get_field('add_transection')); ?>
-
-  <div class="repres-extra-sec">
-    <?php if($count > 9){  ?>
-    <div class="transection-extra-col transection-bt section-1 as-sw-hd"><i class="far fa-minus-circle"></i><i class="far fa-plus-circle"></i><span>View More</span></div>  
-  <?php } ?>
- </div>
-
-</div>
 </div>
 </section>
 </main>

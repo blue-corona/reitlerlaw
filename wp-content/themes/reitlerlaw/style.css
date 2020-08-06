@@ -2340,3 +2340,58 @@ button.refresh {
 @media (max-width: 1699px) and (min-width: 1200px){
   html body .bio-image{background-size:100% !important; background-repeat: no-repeat !important; min-height: auto !important;}
 }
+
+
+
+.experience-row 	.experience-column {
+background-color: #ededed;
+padding: 20px;
+box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+border: 1px solid #ccc;
+   margin-bottom: 30px;
+}
+.experience-column h2 {
+font-family: 'Open Sans', sans-serif;
+margin: 0 0 15px 0;
+text-transform: uppercase;
+font-size: 20px;
+color: #393D3F;
+font-weight: bold;
+line-height: normal;
+text-align: left;    min-height: 27.2px;
+}
+.experience-column p {
+font-size: 16px;
+line-height: 25px; margin: 0;
+}
+.experience-column img { margin-bottom:20px;}
+.btn-expand-collapse {
+position: relative;
+width: 100%;
+outline: none;
+height: 27px;
+padding: 0;    background: transparent;     color: #707070;
+}
+.experience-column .btn-expand-collapse:hover {
+background: transparent; 
+color: #707070;     outline: none;
+}
+.experience-column .btn-expand-collapse:focus {
+outline: 0;
+box-shadow: none;
+}
+.experience-column .btn-expand-collapse[data-toggle="collapse"]::after{content: "\f067";}
+.experience-column .btn-expand-collapse[aria-expanded="true"]::after{content: "\f068";}
+.experience-column .btn-expand-collapse[data-toggle="collapse"]::after, .experience-column .btn-expand-collapse[aria-expanded="true"]::after, .experience-column .btn-expand-collapse[aria-expanded="false"]::after {
+width: 10px;
+height: 10px;
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+position: absolute;
+right: 3px;
+top: 5px;
+}
