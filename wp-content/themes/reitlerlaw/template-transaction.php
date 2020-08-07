@@ -79,7 +79,7 @@ get_header();
 					$current_title = get_the_title(); 
 					$current_client = get_field('client_name');
 					$current_client_cnt = mb_strlen($current_client);
-					$wrd_cnt = ($current_client_cnt > 28)? 162 : 199;
+					$wrd_cnt = ($current_client_cnt > 28)? 159 : 196;
 					$current_content = get_the_content(); 
 					$final_content =str_ireplace('<p>','',$current_content);
 					$final_content=str_ireplace('</p>','',$final_content); 
@@ -89,7 +89,7 @@ get_header();
 						$output .= '<p>'.$first_content.'<span class="read-more-dot">...</span></p>';
 						$second_content = substr($final_content,$wrd_cnt);
 						$output .= '<div id="column'.get_the_ID().'" class="collapse"><p>'.$second_content.'</p></div>';
-						$output .= '<div class="block-expnd">+</div>';
+						$output .= '<div class="block-expnd-btn"><span class="block-expnd"></span></div>';
 					}else{
 						$output .= '<p>'.$final_content.'</p>';
 					}
@@ -97,7 +97,10 @@ get_header();
 					<div class="col-12 col-sm-6 col-lg-4 transection-box-single">
 						 <div class="transection-box experience-column">
 							<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php echo $current_client; ?></a></h2>
-							<img src="<?php echo $term_img['url']; ?>" alt="<?php echo $term_img['alt']; ?>" >
+							
+							<div class="experience-image" style="background-image:url('<?php echo $term_img['url']; ?>');">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/place-holder.jpg" alt="<?php echo $term_img['alt']; ?>" >
+							</div>
 							<div class="experience-column-content">
 								<?php echo $output; ?>
 							</div>
@@ -105,7 +108,9 @@ get_header();
 					</div>
 				
 				<?php endwhile; ?>
-				
+				<div class="col-12 text-center text-sm-left">
+				<div class="align-middle d-inline-block mb-4 mb-sm-0">
+				<div class="nav-links">
 				<?php // S
 					echo paginate_links( array(
 						'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -117,18 +122,23 @@ get_header();
 						'end_size'     => 2,
 						'mid_size'     => 1,
 						'prev_next'    => true,
-						'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Posts', 'text-domain' ) ),
-						'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
+						'prev_text'    => sprintf( '<i class="fal fa-angle-double-right"></i> %1$s', __( '', 'text-domain' ) ),
+						'next_text'    => sprintf( '%1$s <i class="fal fa-angle-double-left"></i>', __( '', 'text-domain' ) ),
 						'add_args'     => false,
 						'add_fragment' => '',
 					) );
-				?>		
-				<div class="transection-extra-col transection-form"><span><i class="far fa-search"></i> Search</span> 
-				<form id="representation-form" class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+				?>	
+</div>				
+</div>				
+				<div class="align-middle d-inline-block">
+				<div class="transection-extra-col transection-form">
+				<form id="representation-form" class="transection-search active-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 				<input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
 				<input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
 				</form>
 
+				</div>
+				</div>
 				</div>
 			
 					<?php wp_reset_postdata();
@@ -162,11 +172,11 @@ jQuery(document).ready(function(){
 	});
 	
 	jQuery( ".block-expnd" ).toggle(function() {
-	  var elmn_content = jQuery(this).siblings('.collapse').text();
-	  jQuery(this).siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
+	  var elmn_content = jQuery(this).parent().siblings('.collapse').text();
+	  jQuery(this).parent().siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
 	  jQuery(this).addClass('close-block');
 	}, function() {
-	  jQuery(this).siblings('p').children('.read-more-dot').text('...');
+	  jQuery(this).parent().siblings('p').children('.read-more-dot').text('...');
 	  jQuery(this).removeClass('close-block');
 	});
 });
