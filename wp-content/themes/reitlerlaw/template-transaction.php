@@ -71,8 +71,9 @@ get_header();
 					while($query->have_posts()) : $query->the_post();
 					$output ='';
 					$current_title = get_the_title(); 
-					$current_title_cnt = mb_strlen($current_title);
-					$wrd_cnt = ($current_title_cnt > 28)? 162 : 199;
+					$current_client = get_field('client_name');
+					$current_client_cnt = mb_strlen($current_client);
+					$wrd_cnt = ($current_client_cnt > 28)? 162 : 199;
 					$current_content = get_the_content(); 
 					$final_content =str_ireplace('<p>','',$current_content);
 					$final_content=str_ireplace('</p>','',$final_content); 
@@ -89,7 +90,7 @@ get_header();
 					?>
 					<div class="col-12 col-sm-6 col-lg-4 transection-box-single">
 						 <div class="transection-box experience-column">
-							<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php echo get_field('client_name'); ?></a></h2>
+							<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php echo $current_client; ?></a></h2>
 							<img src="http://reitlerlaw.wpengine.com/wp-content/uploads/2020/08/place-holder.jpg" alt="" >
 							<div class="experience-column-content">
 								<?php echo $output; ?>

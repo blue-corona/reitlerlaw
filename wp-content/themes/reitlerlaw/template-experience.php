@@ -76,29 +76,6 @@ get_header();
             </div>
 		   <?php } ?>
 		   </div>
-			
-			
-			
-			
-			
-          <?php if (have_rows('add_business_partners') ) : ?>
-		   <div class="row text-center">
-           <?php while (have_rows('add_business_partners') ) : the_row() ; ?>  
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-1-5 mb-4"> 
-              <a href="<?php the_sub_field('add_partner_link') ; ?>" class="transection-col experience-col">
-                <div class="transection-col-inner">
-                  <div class="transection-image">
-                    <?php $sec_img = get_sub_field('add_partner_image') ; ?>
-                    <img data-src="<?php echo $sec_img['url'] ; ?>" alt="<?php echo $sec_img['alt'] ; ?>" />
-                  </div>
-                  <div class="transection-text"><?php the_sub_field('add_partner_description') ; ?></div>
-                </div>
-              </a>
-            </div>
-          <?php endwhile ; ?>
-		   </div>
-        <?php endif ;?>
-    
     </div>
 </div>
 </section>
