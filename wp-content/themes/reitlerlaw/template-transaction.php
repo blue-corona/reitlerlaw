@@ -122,8 +122,8 @@ get_header();
 						'end_size'     => 2,
 						'mid_size'     => 1,
 						'prev_next'    => true,
-						'prev_text'    => sprintf( '<i class="fal fa-angle-double-right"></i> %1$s', __( '', 'text-domain' ) ),
-						'next_text'    => sprintf( '%1$s <i class="fal fa-angle-double-left"></i>', __( '', 'text-domain' ) ),
+						'prev_text'    => sprintf( '<i class="fal fa-angle-double-left"></i> %1$s', __( '', 'text-domain' ) ),
+						'next_text'    => sprintf( '%1$s <i class="fal fa-angle-double-right"></i>', __( '', 'text-domain' ) ),
 						'add_args'     => false,
 						'add_fragment' => '',
 					) );
