@@ -96,7 +96,7 @@ get_header();
 					?>
 					<div class="col-12 col-sm-6 col-lg-4 transection-box-single">
 						 <div class="transection-box experience-column">
-							<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php echo $current_client; ?></a></h2>
+							<h2><?php echo $current_client; ?></h2>
 							
 							<div class="experience-image" style="background-image:url('<?php echo $term_img['url']; ?>');">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/place-holder.jpg" alt="<?php echo $term_img['alt']; ?>" >
