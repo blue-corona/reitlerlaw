@@ -79,10 +79,10 @@ get_header();
 					$totlalphabet_count =  mb_strlen($final_content);
 					if($totlalphabet_count > $wrd_cnt ){
 						$first_content = substr($final_content,0,$wrd_cnt );
-						$output .= '<p>'.$first_content.'</p>';
+						$output .= '<p>'.$first_content.'<span class="read-more-dot">...</span></p>';
 						$second_content = substr($final_content,$wrd_cnt);
 						$output .= '<div id="column'.get_the_ID().'" class="collapse"><p>'.$second_content.'</p></div>';
-						$output .= '<button type="button" class="btn btn-expand-collapse" data-toggle="collapse" data-target="#column'.get_the_ID().'"> </button>';
+						$output .= '<div class="block-expnd">+</div>';
 					}else{
 						$output .= '<p>'.$final_content.'</p>';
 					}
@@ -97,42 +97,41 @@ get_header();
 						 </div>
 					</div>
 				
-				<?php
-					endwhile;
+				<?php endwhile; ?>
+				
+				<?php // S
+					echo paginate_links( array(
+						'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+						'total'        => $query->max_num_pages,
+						'current'      => max( 1, get_query_var( 'paged' ) ),
+						'format'       => '?paged=%#%',
+						'show_all'     => false,
+						'type'         => 'plain',
+						'end_size'     => 2,
+						'mid_size'     => 1,
+						'prev_next'    => true,
+						'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Posts', 'text-domain' ) ),
+						'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
+						'add_args'     => false,
+						'add_fragment' => '',
+					) );
+				?>		
+				<div class="transection-extra-col transection-form"><span><i class="far fa-search"></i> Search</span> 
+				<form id="representation-form" class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+				<input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
+				<input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
+				</form>
+
+				</div>
 			
-						echo paginate_links( array(
-							'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-							'total'        => $query->max_num_pages,
-							'current'      => max( 1, get_query_var( 'paged' ) ),
-							'format'       => '?paged=%#%',
-							'show_all'     => false,
-							'type'         => 'plain',
-							'end_size'     => 2,
-							'mid_size'     => 1,
-							'prev_next'    => true,
-							'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Posts', 'text-domain' ) ),
-							'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
-							'add_args'     => false,
-							'add_fragment' => '',
-						) );
-					wp_reset_postdata();
-					}
-				?>
+					<?php wp_reset_postdata();
+						}
+					?>
 		   </div>
 		</div>
 
     
     </div>
- <div class="transection-extra-col transection-form"><span><i class="far fa-search"></i> Search</span> 
-       <!--<form class="transection-search">
-        <input class="search-text" id="myInput" type="text" placeholder="Search..">
-      </form> -->
-     <form id="representation-form" class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-        <input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
-       <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
-     </form>
-
-   </div>
 </div>
 </section>
 </main>
@@ -155,6 +154,14 @@ jQuery(document).ready(function(){
 		}
 	});
 	
+	jQuery( ".block-expnd" ).toggle(function() {
+	  var elmn_content = jQuery(this).siblings('.collapse').text();
+	  jQuery(this).siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
+	  jQuery(this).addClass('close-block');
+	}, function() {
+	  jQuery(this).siblings('p').children('.read-more-dot').text('...');
+	  jQuery(this).removeClass('close-block');
+	});
 });
 </script>
 <?php
