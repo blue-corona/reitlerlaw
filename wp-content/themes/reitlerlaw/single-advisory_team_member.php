@@ -94,6 +94,8 @@ get_header(); ?>
                      </div>
                      <?php while( have_posts() ) : the_post() ; ?>
                         <?php the_content() ; ?>
+						<strong><u>Education:</u></strong>
+						<p><?php echo get_field('education');?></p>
                      <?php endwhile ; ?>
                      
                      <!---Sub Tabs Starts Here------>  

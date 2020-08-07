@@ -1367,7 +1367,7 @@ section.subpage-content.page-transection-content {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.partener-logo-col div[class*="col-"] {
+.transection-box-single {
   min-height: 251px;
 }
 .page-template-template-experience .partener-logo-col div[class*="col-"] {min-height: initial;}
