@@ -56,7 +56,7 @@ get_header();
 				 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
 					$query = new WP_Query( array(
 					  'post_type' => 'transactions',
-					  'posts_per_page' => 6,
+					  'posts_per_page' => 12,
 					  'paged' => $paged,
 					  'tax_query' => array(
 						'relation' => 'AND',
@@ -70,6 +70,12 @@ get_header();
 					if($query->have_posts()) {
 					while($query->have_posts()) : $query->the_post();
 					$output ='';
+					$post_terms1 =  get_the_terms(get_the_ID(), 'transactions_cat');
+					$term_img = get_field('transaction_category_image', 'transactions_cat_'.$post_terms1[0]->term_id);
+					if(!$term_img){
+						 $term_img['url'] = get_template_directory_uri().'/assets/images/place-holder.jpg';
+						 $term_img['alt'] = 'default transaction image';
+					}
 					$current_title = get_the_title(); 
 					$current_client = get_field('client_name');
 					$current_client_cnt = mb_strlen($current_client);
@@ -91,7 +97,7 @@ get_header();
 					<div class="col-12 col-sm-6 col-lg-4 transection-box-single">
 						 <div class="transection-box experience-column">
 							<h2><a href="<?php the_permalink(); ?>" target="_blank"><?php echo $current_client; ?></a></h2>
-							<img src="http://reitlerlaw.wpengine.com/wp-content/uploads/2020/08/place-holder.jpg" alt="" >
+							<img src="<?php echo $term_img['url']; ?>" alt="<?php echo $term_img['alt']; ?>" >
 							<div class="experience-column-content">
 								<?php echo $output; ?>
 							</div>
