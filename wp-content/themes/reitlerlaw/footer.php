@@ -33,7 +33,7 @@ global $setting_post_id;
          <?php endif; ?>
       </div>
       <div class="row bottom-footer d-xl-inline-block d-none">
-         <div class="bottom-left col-lg-8" style="letter-spacing: -0.3px;">&copy; <?php echo date('Y'); ?> reitler kailas & rosenblatt llc. All rights reserved   |   <a class="att-ad" href="JavaScript:Void(0);">Attorney Advertising </a>  |   Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></div>
+         <div class="bottom-left col-lg-8" style="letter-spacing: -0.3px;font-family: times new roman;">&copy; <?php echo date('Y'); ?> reitler kailas & rosenblatt llc. All rights reserved   |   <a class="att-ad" href="JavaScript:Void(0);">Attorney Advertising </a>  |   Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></div>
          <div class="bottom-right col-lg-4">
             <ul>
                <li><a href="JavaScript:Void(0);" data-toggle="modal" data-target="#sitemapModal">Sitemap</a></li>
@@ -199,7 +199,7 @@ global $setting_post_id;
         </div>
         <div class="modal-body">
           <div class="video-wrapper">
-            <iframe id="home1_yt_video" width="560" height="315" src="http://s3.amazonaws.com/reitlerlaw/app/public/ckeditor_assets/attachments/82/reitler_ranked_8th_most_active_vc_law_firm_in_the_nation_by_pitchbook_for_q1_2020.pdf" frameborder="0" allowfullscreen=""></iframe>
+            <iframe id="home1_yt_video" width="560" height="315" src="https://s3.amazonaws.com/reitlerlaw/app/public/ckeditor_assets/attachments/82/reitler_ranked_8th_most_active_vc_law_firm_in_the_nation_by_pitchbook_for_q1_2020.pdf" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
