@@ -1123,7 +1123,9 @@ footer.site-footer {
   font-weight: 500;
   color: #575a5b;
 }
-
+.footer-title {
+	font-family: 'Times New Roman';
+}
 .bottom-footer {
   font-size: 12px;
   text-transform: uppercase;
@@ -2300,6 +2302,15 @@ button.refresh {
   background: #fff;
   color: #383d84;
 }
+.banner-sub-text a.text-btn {
+    background: transparent;
+    padding: 0;
+}
+.banner-sub-text a.text-btn:hover  {
+	  color: #fff;
+    background: transparent;
+   
+}
 
 .ubermenu .ubermenu-item-level-0 {
   vertical-align: middle!important;
@@ -2521,3 +2532,5 @@ content: "\f067";
     height: auto;
 	line-height: 25px;
 }
+
+

@@ -33,7 +33,7 @@ global $setting_post_id;
          <?php endif; ?>
       </div>
       <div class="row bottom-footer d-xl-inline-block d-none">
-         <div class="bottom-left col-lg-8">&copy; <?php echo date('Y'); ?> reitler kailas & rosenblatt llc. All rights reserved   |   <a class="att-ad" href="JavaScript:Void(0);">Attorney Advertising </a>  |   Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></div>
+         <div class="bottom-left col-lg-8" style="letter-spacing: -0.3px;">&copy; <?php echo date('Y'); ?> reitler kailas & rosenblatt llc. All rights reserved   |   <a class="att-ad" href="JavaScript:Void(0);">Attorney Advertising </a>  |   Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></div>
          <div class="bottom-right col-lg-4">
             <ul>
                <li><a href="JavaScript:Void(0);" data-toggle="modal" data-target="#sitemapModal">Sitemap</a></li>
@@ -184,6 +184,62 @@ global $setting_post_id;
     }
     
   </style>
+
+
+<!-- Original Frontpage Modal -->
+
+
+<?php if(is_page(10)) { ?>
+
+  <div class="modal fade" id="home1_link" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="video-wrapper">
+            <iframe id="home1_yt_video" width="560" height="315" src="http://s3.amazonaws.com/reitlerlaw/app/public/ckeditor_assets/attachments/82/reitler_ranked_8th_most_active_vc_law_firm_in_the_nation_by_pitchbook_for_q1_2020.pdf" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+
+<style>
+.modal-header .close::before {display:none;}
+.modal-header .close::after {display:none;}
+
+.modal-content {padding: 0;}
+.modal-header {padding: 17px !important;}
+.modal-body {padding: 15px 10px !important;}
+.video-wrapper {
+  position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+#home1_yt_video {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.modal-header .close {
+  margin-top: 17px;
+  left:0%;
+}
+</style>
+
+<?php } ?>
+
+
+
+<!-- Front page modal ends -->
+
 
   <div class="modal fade popup-modal" id="covid-popup-Modal" tabindex="-1" role="dialog" aria-labelledby="popupModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
