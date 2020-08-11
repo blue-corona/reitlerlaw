@@ -44,7 +44,7 @@ get_header(); ?>
 							while( have_posts() ){
 								the_post();
 								$trans_terms1 = get_the_terms(get_the_ID(),'transactions_cat');
-								if($trans_terms1[0]->name == $trans_term){
+								if($trans_terms1[0]->name == $trans_term && get_post_type() == 'transactions'){
 								?>
 								<div id="post-<?php the_ID(); ?>" class="post_single">
 										

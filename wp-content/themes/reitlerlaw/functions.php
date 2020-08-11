@@ -801,8 +801,10 @@ add_filter( 'the_content', 'change_phone_anchor_responsive');
 
 /* Exclude certain pages from search results */
 function bc_search_filter( $query ) {
+	global $wp_the_query;
   if ( $query->is_search && $query->is_main_query() ) {
-    $query->set( 'post__not_in', array( 876,10) );
+	$query->set( 'post__not_in', array( 876,10) );
+	 $query->set( 'posts_per_page', -1 );
   }
 }
 add_action( 'pre_get_posts', 'bc_search_filter' );
