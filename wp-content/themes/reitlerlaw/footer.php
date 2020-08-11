@@ -23,7 +23,7 @@ global $setting_post_id;
          <?php if(get_field('add_address', $setting_post_id)): ?>                   
          <?php while(has_sub_field('add_address', $setting_post_id)): ?>
 
-         <div class="col-lg-6">
+         <div class="col-lg-3">
             <div class="address-col">
               <?php $phone = get_sub_field('phone_number');?>
                <?php $sorted = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1.$2.$3", $phone); ?>     
