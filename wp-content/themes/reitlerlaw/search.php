@@ -38,6 +38,7 @@ get_header(); ?>
 						
 					}
 					if($_GET['type']== 'transactions'){
+						$trans_terms = array_unique($trans_terms);
 						foreach($trans_terms as $trans_term){
 							echo '<h1>' .$trans_term.'</h1>';
 							while( have_posts() ){
