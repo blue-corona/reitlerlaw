@@ -70,7 +70,7 @@ get_header();
 					if($query->have_posts()) {
 					while($query->have_posts()) : $query->the_post();
 					$output ='';
-					$post_terms1 =  get_the_terms(get_the_ID(), 'transactions_cat');
+					$post_terms1 =  get_the_terms(get_the_ID(), 'transactions_img');
 					$term_img = get_field('transaction_category_image', 'transactions_cat_'.$post_terms1[0]->term_id);
 					if(!$term_img){
 						 $term_img['url'] = get_template_directory_uri().'/assets/images/place-holder.jpg';
