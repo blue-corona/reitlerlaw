@@ -2138,6 +2138,7 @@ button.refresh {
   margin: 0 15px 25px 0;
   font-size: 20px;
   width: 90%;
+  margin: auto !important;
 }
 
 .person .name {
