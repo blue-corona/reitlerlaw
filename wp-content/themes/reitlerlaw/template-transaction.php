@@ -63,7 +63,7 @@ get_header();
 						array(
 						  'taxonomy' => 'transactions_cat',
 						  'field'    => 'term_id',
-						  'terms'    => array_values($termarray)
+						  'terms'    => $selected_term_id
 						)
 					  )
 					));
@@ -96,7 +96,7 @@ get_header();
 					?>
 					<div class="col-12 col-sm-6 col-lg-4 transection-box-single">
 						 <div class="transection-box experience-column">
-							<h2><?php echo $current_client; ?></h2>
+							<h2><?php if($current_client){echo $current_client;}else{the_title();} ?></h2>
 							
 							<div class="experience-image" style="background-image:url('<?php echo $term_img['url']; ?>');">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/place-holder.jpg" alt="<?php echo $term_img['alt']; ?>" >

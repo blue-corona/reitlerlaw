@@ -22,28 +22,40 @@ get_header(); ?>
 						printf( __( 'Search Results for: %s', 'reitlerlaw' ), get_search_query() );
 					?>
 				</h1>
-                  <?php if ( have_posts() ) : ?>
-               <?php /* Start the Loop */ ?>
-               <?php while ( have_posts() ) : the_post(); ?>
-               <div id="post-<?php the_ID(); ?>" class="post_single">
-                  <?php if ( is_sticky() ) : ?>
-                  <hgroup>
-                     <h2><a href="<?php the_permalink(); ?>"  rel="bookmark"><?php the_title(); ?></a></h2>
-                     <h3 class="entry-format"><?php _e( 'Featured', 'reitlerlaw' ); ?></h3>
-                  </hgroup>
-                  <?php else : ?>
-                  <h2><a href="<?php the_permalink(); ?>"  rel="bookmark"><?php the_title(); ?></a></h2>
-                  <?php endif; ?>
-               
-                   <?php $text = get_the_content() ; ?>	
-						<?php $trimmed = wp_trim_words( $text, $num_words = 50, $more = null ); ?>
-					<p>	<?php echo $trimmed; ?></p>
-                  
-                     <a href="<?php the_permalink(); ?>" class=" btn btn-blue">Read More</a>  
-                 
-               </div>
-               <!-- #post-<?php the_ID(); ?> -->
-               <?php endwhile; ?>
+                  <?php if ( have_posts() ) : 
+						$cnt = 1;
+						$allpost_array = array();
+					while( have_posts() ){
+						the_post();
+						$Ptype = get_post_type();
+						$allpost_array[$cnt] = $Ptype;
+						$cnt++;
+					}
+					//print_r( array_unique($allpost_array));
+						$types = array_unique($allpost_array);
+					 //$types = array('post', 'page', 'team','transactions','advisory_team_member');
+						foreach( $types as $type ){
+							echo '<h1>Search Container Type: ' .$type.'</h1>';
+							while( have_posts() ){
+								the_post();
+								if( $type == get_post_type() ){
+						?>
+									 <div id="post-<?php the_ID(); ?>" class="post_single">
+										
+										<h2><a href="<?php the_permalink(); ?>"  rel="bookmark"><?php the_title(); ?></a></h2>
+										<?php $text = get_the_content() ; ?>	
+											<?php $trimmed = wp_trim_words( $text, $num_words = 50, $more = null ); ?>
+										<p>	<?php echo $trimmed; ?></p>
+									  
+										 <a href="<?php the_permalink(); ?>" class=" btn btn-blue">Read More</a>  
+									  </div>
+									<?php
+								}
+								
+							}
+							rewind_posts();
+						}
+				?>
                <?php if(function_exists('wp_page_numbers')) : wp_page_numbers(); endif; ?>
                <?php else : ?>
                <article id="post-0" class="post no-results not-found">

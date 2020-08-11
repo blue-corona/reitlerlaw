@@ -2360,7 +2360,7 @@ padding: 20px;
 box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 border: 1px solid #ccc;
    margin-bottom: 30px;
-   min-height: 378px; 
+   min-height: 432px; 
 }
 .experience-column h2 {
 font-family: 'Open Sans', sans-serif;
@@ -2441,6 +2441,14 @@ content: "\f067";
 
 .close-block:after {    content: "\f068";}
 
+@media (min-width: 1281px){
+.experience-row  .transection-box-single {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.experience-row .experience-column {    min-height: 441px;}
+}
 /*** Search Page pagination **/
 /* Text meant only for screen readers. */
 .screen-reader-text {
