@@ -35,7 +35,7 @@ get_header(); ?>
 						$types = array_unique($allpost_array);
 					 //$types = array('post', 'page', 'team','transactions','advisory_team_member');
 						foreach( $types as $type ){
-							echo '<h1>Search Container Type: ' .$type.'</h1>';
+							echo '<h1>' .$type.'</h1>';
 							while( have_posts() ){
 								the_post();
 								if( $type == get_post_type() ){

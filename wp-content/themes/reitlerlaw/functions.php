@@ -802,7 +802,7 @@ add_filter( 'the_content', 'change_phone_anchor_responsive');
 /* Exclude certain pages from search results */
 function bc_search_filter( $query ) {
   if ( $query->is_search && $query->is_main_query() ) {
-    $query->set( 'post__not_in', array( 876) );
+    $query->set( 'post__not_in', array( 876,10) );
   }
 }
 add_action( 'pre_get_posts', 'bc_search_filter' );
