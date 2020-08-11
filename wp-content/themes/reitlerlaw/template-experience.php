@@ -32,12 +32,12 @@ get_header();
 
    <section class="subpage-content page-transection-content">
     <div class="container">
-      <!--<div class="transection-extra-col transection-form" style="text-align: center;"><span><i class="far fa-search"></i> Search</span> 
+      <div class="transection-extra-col transection-form" style="text-align: center;"><span><i class="far fa-search"></i> Search</span> 
       <form class="transection-search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
         <input type="text" name="s" id="search" class="search-text">
-        <input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon">
+        <input type="hidden" name="type" id="transactions" class="search-text" value='transactions' >
       </form>
-      </div>-->
+      </div>
       <div class="partener-logo-col">
         <h1><?php the_title() ; ?></h1>
 			<?php 

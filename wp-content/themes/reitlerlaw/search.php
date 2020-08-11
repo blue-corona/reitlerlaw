@@ -25,12 +25,42 @@ get_header(); ?>
                   <?php if ( have_posts() ) : 
 						$cnt = 1;
 						$allpost_array = array();
+						$trans_terms = array();
 					while( have_posts() ){
 						the_post();
 						$Ptype = get_post_type();
 						$allpost_array[$cnt] = $Ptype;
+						if($Ptype == 'transactions'){
+							$trans_terms1 = get_the_terms(get_the_ID(),'transactions_cat');
+							$trans_terms[] = $trans_terms1[0]->name;
+						}
 						$cnt++;
+						
 					}
+					if($_GET['type']== 'transactions'){
+						foreach($trans_terms as $trans_term){
+							echo '<h1>' .$trans_term.'</h1>';
+							while( have_posts() ){
+								the_post();
+								$trans_terms1 = get_the_terms(get_the_ID(),'transactions_cat');
+								if($trans_terms1[0]->name == $trans_term){
+								?>
+								<div id="post-<?php the_ID(); ?>" class="post_single">
+										
+									<h2><a href="<?php the_permalink(); ?>"  rel="bookmark"><?php the_title(); ?></a></h2>
+									<?php $text = get_the_content() ; ?>	
+										<?php $trimmed = wp_trim_words( $text, $num_words = 50, $more = null ); ?>
+									<p>	<?php echo $trimmed; ?></p>
+								  
+									 <a href="<?php the_permalink(); ?>" class=" btn btn-blue">Read More</a>  
+								  </div>
+								<?php
+								}
+							}
+							rewind_posts();
+						}
+					}else{
+					
 					//print_r( array_unique($allpost_array));
 						$types = array_unique($allpost_array);
 					 //$types = array('post', 'page', 'team','transactions','advisory_team_member');
@@ -55,6 +85,8 @@ get_header(); ?>
 							}
 							rewind_posts();
 						}
+						
+					}
 				?>
                <?php if(function_exists('wp_page_numbers')) : wp_page_numbers(); endif; ?>
                <?php else : ?>
