@@ -34,7 +34,7 @@ get_header();
         <?php while (have_posts() ) : the_post() ; ?>
          <?php  the_content() ; ?>
        <?php endwhile ; ?>
-       
+     
    <?php
    $args = array(
 		'post_type' => 'advisory_team_member',
@@ -42,8 +42,9 @@ get_header();
 		'order' => 'ASC'
 	);
 	$query = new WP_Query( $args );
-	
+    
 	if ( $query->have_posts() ) { ?>
+  <h2 class="our-team-heading">Our Team</h2>
    <div class="section-details-text col-xs-12">
 		<div class="row">
 			 <?php while ( $query->have_posts() ) { // variable must be called $post (IMPORTANT) ?>

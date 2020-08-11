@@ -18,9 +18,11 @@ global $setting_post_id;
 <div class="footer-top">
    <div class="container">
       <div class="footer-title"><?php the_field('company_name', $setting_post_id)?></div>
-      <div class="row">
+      <div class="row footer-columns">
+        <div class="col-lg"></div>
          <?php if(get_field('add_address', $setting_post_id)): ?>                   
          <?php while(has_sub_field('add_address', $setting_post_id)): ?>
+
          <div class="col-lg-6">
             <div class="address-col">
               <?php $phone = get_sub_field('phone_number');?>
@@ -29,8 +31,10 @@ global $setting_post_id;
                <div class="footer-address"><?php the_sub_field('address'); ?></div>
             </div>
          </div>
+
          <?php endwhile; ?>  
          <?php endif; ?>
+         <div class="col-lg"></div>
       </div>
       <div class="row bottom-footer d-xl-inline-block d-none">
          <div class="bottom-left col-lg-8" style="letter-spacing: -0.3px;font-family: times new roman;">&copy; <?php echo date('Y'); ?> reitler kailas & rosenblatt llc. All rights reserved   |   <a class="att-ad" href="JavaScript:Void(0);">Attorney Advertising </a>  |   Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></div>
