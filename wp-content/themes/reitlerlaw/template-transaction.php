@@ -30,6 +30,15 @@ get_header();
     <div class="container">
       <div class="partener-logo-col">
         <h1><?php the_title() ; ?></h1>
+		<div class="align-middle d-inline-block">
+				<div class="transection-extra-col transection-form">
+				<form id="representation-form" class="transection-search active-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+				<input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
+				<input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
+				</form>
+
+				</div>
+				</div>
 		<?php 
 			if(get_field('list_of_transaction_category')){
 				
@@ -130,7 +139,7 @@ get_header();
 				?>	
 </div>				
 </div>				
-				<div class="align-middle d-inline-block">
+				<!-- <div class="align-middle d-inline-block">
 				<div class="transection-extra-col transection-form">
 				<form id="representation-form" class="transection-search active-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 				<input class="search-text" id="myInput" type="text" placeholder="Search.." name="search" required/>
@@ -138,7 +147,7 @@ get_header();
 				</form>
 
 				</div>
-				</div>
+				</div> -->
 				</div>
 			
 					<?php wp_reset_postdata();
