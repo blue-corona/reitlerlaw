@@ -829,7 +829,7 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
   /* max-height: 235px; */
   max-height: 155px;
   overflow: hidden;
-  margin-bottom: 1em;
+  margin-bottom: 0.25em;
 }
 
 .service-single-content.service-cta-color {
