@@ -52,7 +52,7 @@ get_header();
 				$mem_img = get_field('advisory_headshot');
 			?>
 			<div class="col-12 col-xl-6" style="margin-bottom:15px">
-				<div class="person container-fluid">
+				<div class="person">
 				<a href="<?php the_permalink();?>" class="row align-items-center" style="cursor: pointer;">
 				<div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
 				<div class="col-7 col-sm-8">
