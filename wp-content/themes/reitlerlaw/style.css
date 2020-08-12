@@ -2164,6 +2164,10 @@ button.refresh {
   font-size: 13px;
 }
 
+.advisory-person{
+  max-width: 445px;
+}
+
 .partener-logo-col .person div[class*="col-"] {
   margin: 0;
   padding: 0;
