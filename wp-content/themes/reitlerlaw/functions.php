@@ -816,7 +816,7 @@ function reitler_lib_block_func( $atts ) {
 	$blockttitle = $atts['title'];
 	$blocklink = $atts['link'];
 	$blockID = (str_replace(' ', '-', strtolower($blockttitle)));
-		$data .= '<div class="col-md-6 col-xl-4" style="margin-bottom: 15px;">';
+		$data .= '<div class="col-md-6 col-xl-3" style="margin-bottom: 15px;">';
 		if($blocktype == 'normal'){
 			$data .= '<a href="'.$blocklink.'">';
 		}elseif($blocktype == 'video' || $blocktype == 'image'){
