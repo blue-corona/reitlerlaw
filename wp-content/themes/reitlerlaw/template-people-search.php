@@ -239,7 +239,7 @@ if((isset($_POST['member_name']) && !empty($_POST['member_name'])) || isset($_GE
               <div class="row align-items-center">
                 <div class="col-5 col-sm-4">
                   <?php $partner_img = get_field('member_image') ; ?>
-                  <a data-no-turbolink="true" href="<?php the_permalink(); ?>"> <img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php echo $partner_img['alt'] ; ?>"></a>
+                  <a data-no-turbolink="true" href="<?php the_permalink(); ?>"> <img class="profile-photo" src="<?php echo $partner_img['url'] ; ?>" alt="<?php the_title(); ?>"></a>
                 </div>
                 <div class="col-7 col-sm-8 alphabetical-order py-2">
                   <a data-no-turbolink="true" href="<?php the_permalink(); ?>">
