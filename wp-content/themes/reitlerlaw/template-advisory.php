@@ -46,7 +46,7 @@ get_header();
 	if ( $query->have_posts() ) { ?>
   <h2 class="our-team-heading">Our Team</h2>
    <div class="section-details-text col-xs-12">
-		<div class="row">
+		<div id="people" class="row justify-content-sm-center">
 			 <?php while ( $query->have_posts() ) { // variable must be called $post (IMPORTANT) ?>
 			<?php $query->the_post();
 				$mem_img = get_field('advisory_headshot');
