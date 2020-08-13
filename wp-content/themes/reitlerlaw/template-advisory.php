@@ -52,17 +52,19 @@ get_header();
 				$mem_img = get_field('advisory_headshot');
 			?>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-12" style="margin-bottom:15px">
-				<div class="person advisory-person">
-				<a href="<?php the_permalink();?>" class="row align-items-center" style="cursor: pointer;">
-				<div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
-				<div class="col-7 col-sm-8">
-				<p class="profile-name"><?php the_title(); ?></p>
-				<p class="profile-title"><?php echo get_field('advisory_designation'); ?></p>
-				<p class="profile-contact_info"><?php echo get_field('advisory_phone_number'); ?> <br><?php echo get_field('advisory_email'); ?></p>
+        <div class="col-12 col-md-11 col-lg-10 mb-4">
+          <div class="person">
+          <a href="<?php the_permalink();?>" class="row align-items-center" style="cursor: pointer;">
+          <div class="col-5 col-sm-4"><img class="profile-photo" src="<?php echo $mem_img['url']; ?>" alt="Joyce Y. Reitler" /></div>
+          <div class="col-7 col-sm-8">
+          <p class="profile-name"><?php the_title(); ?></p>
+          <p class="profile-title"><?php echo get_field('advisory_designation'); ?></p>
+          <p class="profile-contact_info"><?php echo get_field('advisory_phone_number'); ?> <br><?php echo get_field('advisory_email'); ?></p>
 
-				</div>
-				</a>
-				</div>
+          </div>
+          </a>
+          </div>
+        </div>
 			</div>
 			<?php // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			<?php } ?>
