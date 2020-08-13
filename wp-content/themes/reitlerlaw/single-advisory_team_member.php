@@ -79,17 +79,15 @@ get_header(); ?>
                                     <?php if (get_field('advisory_email') ) { ?>
                                        <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <a href="mailto:<?php the_field('advisory_email')?>"><?php the_field('advisory_email')?></a></li>
                                     <?php } ?>
+                                    <br />
                                     <?php if (get_field('advisory_phone_number') ) { ?>
                                        <?php $phonnumr = get_field('advisory_phone_number') ; ?>
                                        <li><span>P:</span> <span class="d-lg-block d-none"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $phonnumr); ?></span><a class="d-lg-none d-block responsive-mob" href="tel:<?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1.$2.$3", $phonnumr); ?>"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $phonnumr); ?></a></li>
-                                       <?php else ?>
-                                          <br />
                                     <?php } ?>
+                                    <br />
                                     <?php if (get_field('advisory_fax_number') ) { ?>
                                        <?php $faxphonnum = get_field('advisory_fax_number') ; ?>
                                        <li><span>F:</span> <span class="fax"><?php echo preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $faxphonnum); ?></span></li>
-                                       <?php else ?>
-                                          <br />
                                     <?php } ?>
                                  </ul>
                               </div>
