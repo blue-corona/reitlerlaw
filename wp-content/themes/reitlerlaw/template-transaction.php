@@ -66,7 +66,7 @@ get_header();
 					  'post_type' => 'transactions',
 					  'posts_per_page' => 12,
 					  'orderby' => 'date',
-					  'order' => 'ASC', 
+					  'order' => 'DESC', 
 					  'paged' => $paged,
 					  'tax_query' => array(
 						'relation' => 'AND',
