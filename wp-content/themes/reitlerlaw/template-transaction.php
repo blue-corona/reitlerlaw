@@ -65,6 +65,8 @@ get_header();
 					$query = new WP_Query( array(
 					  'post_type' => 'transactions',
 					  'posts_per_page' => 12,
+					  'orderby' => 'date',
+					  'order' => 'DESC', 
 					  'paged' => $paged,
 					  'tax_query' => array(
 						'relation' => 'AND',
