@@ -479,8 +479,8 @@ function reitlerlaw_scripts() {
 	wp_enqueue_script( 'reitlerlaw-mCustomScrollbar-ds', get_theme_file_uri( '/assets/js/jquery.mCustomScrollbar.concat.min.js' ), array(), '1.1', true );
 	wp_enqueue_script( 'reitlerlaw-slick-ds', get_theme_file_uri( '/assets/js/slick.js' ), array(), '1.1', true );
 	wp_enqueue_script( 'reitlerlaw-easyresponsivetabs-as', get_theme_file_uri( '/assets/js/easyResponsiveTabs.js' ), array(), '1.1', true );
-	wp_enqueue_script( 'reitlerlaw-desktop-accordian-ds', get_theme_file_uri( '/assets/js/desktop-accordian.js' ), array(), '1.1', true );
-	wp_enqueue_script( 'reitlerlaw-Mobile-accordaian-ds', get_theme_file_uri( '/assets/js/Mobile-accordaian.js' ), array(), '1.1', true );
+	//wp_enqueue_script( 'reitlerlaw-desktop-accordian-ds', get_theme_file_uri( '/assets/js/desktop-accordian.js' ), array(), '1.1', true );
+	//wp_enqueue_script( 'reitlerlaw-Mobile-accordaian-ds', get_theme_file_uri( '/assets/js/Mobile-accordaian.js' ), array(), '1.1', true );
 	wp_enqueue_script( 'reitlerlaw-common-ds', get_theme_file_uri( '/assets/js/common.js' ), array(), '1.1', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
