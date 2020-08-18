@@ -171,8 +171,16 @@ jQuery(document).ready(function(){
 			jQuery('.transection-hidden-content').show();
 		}
 	});
-	
-
+	jQuery(".block-expnd").click(function () {
+		if(jQuery(this).hasClass('close-block')) {
+			jQuery(this).parent().siblings('p').children('.read-more-dot').text('...');
+			jQuery(this).removeClass('close-block');
+		} else {
+			var elmn_content = jQuery(this).parent().siblings('.collapse').text();
+			jQuery(this).parent().siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
+			jQuery(this).addClass('close-block');
+		}
+	});
 });
 </script>
 <?php
