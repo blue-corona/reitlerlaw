@@ -471,7 +471,7 @@ function reitlerlaw_scripts() {
 
 	wp_enqueue_style( 'reitlerlaw-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 	
-	wp_enqueue_script( 'reitlerlaw-lazyloadxtbg-ds', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.bg.js', array(), null, true );
+	//wp_enqueue_script( 'reitlerlaw-lazyloadxtbg-ds', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.bg.js', array(), null, true );
 	wp_enqueue_script( 'reitlerlaw-lazyloadxt-ds', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.min.js', array(), null, true );
 	wp_enqueue_script( 'reitlerlaw-fontawesome-ds', 'https://kit.fontawesome.com/1b5aeb866c.js', array(), null, true );
 
