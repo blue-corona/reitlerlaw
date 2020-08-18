@@ -99,7 +99,7 @@ get_header();
 						$output .= '<p>'.$first_content.'<span class="read-more-dot">...</span></p>';
 						$second_content = substr($final_content,$wrd_cnt);
 						$output .= '<div id="column'.get_the_ID().'" class="collapse"><p>'.$second_content.'</p></div>';
-						$output .= '<div class="block-expnd-btn1"><span class="block-expnd"></span></div>';
+						$output .= '<div class="block-expnd-btn"><div class="block-expnd"></div></div>';
 					}else{
 						$output .= '<p>'.$final_content.'</p>';
 					}
