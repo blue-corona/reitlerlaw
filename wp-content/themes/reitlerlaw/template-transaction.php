@@ -99,7 +99,7 @@ get_header();
 						$output .= '<p>'.$first_content.'<span class="read-more-dot">...</span></p>';
 						$second_content = substr($final_content,$wrd_cnt);
 						$output .= '<div id="column'.get_the_ID().'" class="collapse"><p>'.$second_content.'</p></div>';
-						$output .= '<div class="block-expnd-btn"><span class="block-expnd"></span></div>';
+						$output .= '<div class="block-expnd-btn"><span class="block-expnd1"></span></div>';
 					}else{
 						$output .= '<p>'.$final_content.'</p>';
 					}
@@ -172,7 +172,7 @@ jQuery(document).ready(function(){
 		}
 	});
 	
-	jQuery( ".block-expnd" ).toggle(function() {
+	jQuery( ".block-expnd1" ).toggle(function() {
 	  var elmn_content = jQuery(this).parent().siblings('.collapse').text();
 	  jQuery(this).parent().siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
 	  jQuery(this).addClass('close-block');
