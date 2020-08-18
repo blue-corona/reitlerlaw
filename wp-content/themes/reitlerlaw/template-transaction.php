@@ -172,14 +172,7 @@ jQuery(document).ready(function(){
 		}
 	});
 	
-	jQuery( ".block-expnd" ).toggle(function() {
-	  var elmn_content = jQuery(this).parent().siblings('.collapse').text();
-	  jQuery(this).parent().siblings('p').children('.read-more-dot').html(elmn_content).slideDown("slow");
-	  jQuery(this).addClass('close-block');
-	}, function() {
-	  jQuery(this).parent().siblings('p').children('.read-more-dot').text('...');
-	  jQuery(this).removeClass('close-block');
-	});
+
 });
 </script>
 <?php
