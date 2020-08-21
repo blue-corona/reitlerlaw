@@ -61,7 +61,7 @@ global $setting_post_id;
         <li><a href="JavaScript:Void(0);" data-toggle="modal" data-target="#sitemapModal">Sitemap</a></li>
 			   <li><a href="<?php the_field('privacy_policy_link', $setting_post_id)?>">Privacy Policy</a></li>
                <li><a href="<?php the_field('diversity_link', $setting_post_id)?>">diversity </a></li>
-			   <li> Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="http://www.bluecorona.com/" target="_blank"> blue corona </a></li>
+			   <li> Web Design by  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bluecorona-logo.png" alt="" />     <a href="https://www.bluecorona.com/" target="_blank"> blue corona </a></li>
                <li><a href="JavaScript:Void(0);" data-toggle="modal" data-target="#disclaimerModal">disclaimer</a></li>
             </ul>
          </div>
