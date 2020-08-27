@@ -5,13 +5,7 @@
 
 get_header();
 ?>
-<style>.transaction_loader {display:none;
-   width: 22px;
-    position: absolute;
-    right: -15px;
-    top: 0;
-}
-}</style>
+<style>.transaction_loader {display:none;   width: 22px;    position: absolute;    right: -15px;    top: 0;}</style>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <main class="site-content">
  <section class="subpage-banner">
