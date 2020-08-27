@@ -839,3 +839,55 @@ function reitler_lib_block_func( $atts ) {
 	return  $data;
 }
 add_shortcode( 'reitler-lib-block', 'reitler_lib_block_func' );
+
+
+
+
+
+function ajax_search_enqueues_transactions() {
+    if ( is_page_template('template-transaction.php') ){
+    	wp_enqueue_script( 'ajax-search', get_stylesheet_directory_uri() . '/assets/js/transaction-block.js', array( 'jquery' ), '1.0.0', true );
+        wp_localize_script( 'ajax-search', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'ajax_search_enqueues_transactions' );
+
+
+add_action( 'wp_ajax_load_transactions_block', 'load_transactions_block' );
+add_action( 'wp_ajax_nopriv_load_transactions_block', 'load_transactions_block' );
+
+function load_transactions_block() {
+    $query = $_POST['query'];
+    $cat_id = $_POST['cat_id'];
+    
+    $args = array(
+        'post_type' => 'transactions',
+        'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC', 
+        's' => $query,
+		'tax_query' => array(
+			'relation' => 'AND',
+			array(
+			  'taxonomy' => 'transactions_cat',
+			  'field'    => 'term_id',
+			  'terms'    => $cat_id
+			)
+		)
+    );
+    $search_trans = new WP_Query( $args );
+    ob_start();
+    if ( $search_trans->have_posts() ) : 
+		while ( $search_trans->have_posts() ) : $search_trans->the_post();
+			get_template_part( 'content', 'transactions' );
+		endwhile;
+	else :
+		echo '<div class="col-12">Apologies, but no results were found for the requested transactions. Perhaps searching will help find a related transactions.</div>';
+	endif;
+	$content = ob_get_clean();
+	echo $content;
+	die();
+}
+
