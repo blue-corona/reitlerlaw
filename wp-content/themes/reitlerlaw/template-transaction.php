@@ -5,7 +5,13 @@
 
 get_header();
 ?>
-
+<style>.transaction_loader {display:none;
+   width: 22px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+}
+}</style>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <main class="site-content">
  <section class="subpage-banner">
@@ -39,7 +45,9 @@ get_header();
 				<input  type="hidden" name="cat_id"value="<?php echo $selected_term_id; ?>"/>
 				<input type="image" src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/search-icon.png" class="submit-icon" />
 				</form>
+				<div class="transaction_loader"><img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/reitlerlaw/assets/images/transaction_loader.gif" alt="transaction loader"/></div>
 			</div>
+			
 		</div>
 		<div class="transection-bottom" id="myTable">
 		   <div class="experience-row row">

@@ -44,11 +44,13 @@ jQuery(document).on( 'submit', '#representation-form', function() {
         },
         beforeSend: function() {
 			$input.prop('disabled', true);
+			jQuery('.transaction_loader').show();
         },
         success : function( response ) {
 			$input.prop('disabled', false);
 			jQuery('.experience-row').fadeOut('slow',function(){
 				jQuery('.experience-row').empty().append(response).fadeIn('slow');
+				jQuery('.transaction_loader').hide();
 			});
 		}
     });
