@@ -220,6 +220,10 @@ ul li {
   right: 0;
 }
 
+.slick-slider, .slick-slider p, .slick-slider h2{
+  color: white !important;
+}
+
 @media (min-width:1200px) {
   .submenu-expand,
   button.menu-item-link-return {
