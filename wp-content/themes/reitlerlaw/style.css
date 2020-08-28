@@ -220,10 +220,6 @@ ul li {
   right: 0;
 }
 
-.slick-slider, .slick-slider p, .slick-slider h2{
-  color: white !important;
-}
-
 @media (min-width:1200px) {
   .submenu-expand,
   button.menu-item-link-return {
@@ -1719,7 +1715,17 @@ section.subpage-content.page-transection-content {
   opacity: 1;
 }
 
-
+.slick-slider, 
+.slick-slider p, 
+.slick-slider span, 
+.slick-slider h1, 
+.slick-slider h2, 
+.slick-slider h3, 
+.slick-slider h4, 
+.slick-slider h5, 
+.slick-slider h6{
+  color: white !important;
+}
 /* .service-section .slick-next.slick-disabled, .service-section .slick-prev.slick-disabled{*/
 
 
