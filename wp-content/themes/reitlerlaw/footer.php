@@ -1,3 +1,4 @@
+
 <?php
 /**
  * The template for displaying the footer
@@ -324,7 +325,7 @@ jQuery(document).ready(function() {
     e.preventDefault();
     window.location.href = '/people/';
   });
-
+	jQuery(".service-cnt").mCustomScrollbar();
 });
 </script>
 

@@ -824,10 +824,8 @@ button.btn.people-search-btn, button.btn.people-reset-btn {
   padding: 20px 25px;
   background: #383d84;
   color: #fff;
-  height: 100%;
+ 
   width: 100%;
-  /* max-height: 235px; */
-  max-height: 155px;
   overflow: hidden;
   margin-bottom: 0.25em;
 }
@@ -2562,3 +2560,7 @@ content: "\f067";
 
 .experience-row .experience-column { position: relative;}
 .block-expnd-btn{position: absolute;bottom: 20px; width: calc(100% - 40px);}
+
+.service-cnt {
+    height: 120px;    
+}

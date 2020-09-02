@@ -7,12 +7,14 @@
                ?>                   
             <?php while(has_sub_field('add_service', $frontpage_id)): ?>
             <div class="col-md-3 service-cta">
-            <div id="down_arrow" class="<?php if ($i % 2 == 0) { ?>addcolor <?php } ?>"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+           <!--div id="down_arrow" class="<?php if ($i % 2 == 0) { ?>addcolor <?php } ?>"><i class="fa fa-caret-down" aria-hidden="true"></i></div -->
                <a href=" <?php the_sub_field('service_linking'); ?>" title="<?php the_sub_field('service_heading'); ?>"><div class="service-single-content <?php if ($i % 2 == 0) { ?>service-cta-color <?php } ?>">
                   <div class="service-heading">
                      <?php the_sub_field('service_heading'); ?>
                   </div>
+				  <div class="service-cnt">
                   <?php the_sub_field('service_content'); ?>
+				  </div>
                </div></a>
             </div>
             <?php 
