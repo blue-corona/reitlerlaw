@@ -2359,3 +2359,9 @@ content: "\f067";
 
 
 #transaction-cnt-wrap .left-content{padding:0;min-height:250px}
+
+/*Modal popup close*/
+#disclaimerModalCenterTitle button.close{
+  color: white;
+  background: #383D84;
+}

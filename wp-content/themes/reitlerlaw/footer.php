@@ -76,7 +76,7 @@ global $setting_post_id;
     <div class="modal-content">
       <div class="modal-header">
         <div class="modal-title" id="disclaimerModalCenterTitle">Disclaimer</div> 
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">         
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">X 
         </button>
       </div>
       <div class="modal-body">
