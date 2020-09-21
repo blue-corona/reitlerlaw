@@ -678,6 +678,27 @@
     padding: 0 0 60px;
   }
 }
+/* Resolve related partnerse issue on tablet */
+
+@media (max-width:1200px) {
+
+  .practices-template-default .slide-content {
+    display: block;
+    position: relative;
+    min-height: 150px;
+  }
+  .practices-template-default .slide-content .img-col {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .practices-template-default .slide-content .text-col {
+    width: 100%;
+    padding: 15px 15px 15px 165px;
+  }
+}
 
 @media (max-width:767px) {
   .slide-menu {
